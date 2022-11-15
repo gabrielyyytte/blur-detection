@@ -6,7 +6,7 @@ import numpy as np
 import io
 from PIL import Image
 import base64
-import Helpers
+from Helpers import *
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
