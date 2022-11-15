@@ -6,7 +6,7 @@ import numpy as np
 import io
 from PIL import Image
 import base64
-from Helpers import *
+import Helpers
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
@@ -28,12 +28,9 @@ def upload_image():
 			flash('No image selected for uploading')
 			return redirect(request.url)
 		if file and allowed_file(file.filename):
-			filename = secure_filename(file.filename)
 			filestr = file.read()
 			npimg = np.frombuffer(filestr, np.uint8)
 			image = cv2.imdecode(npimg, cv2.IMREAD_UNCHANGED)
-			ratio = image.shape[0] / 500.0
-			orig = image.copy()
 			image = Helpers.resize(image, height = 500)
 
 			gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
