@@ -2,8 +2,7 @@ import cv2
 import numpy as np
 
 class Helpers:
-	def __init__(self):
-		pass
+	
 
 	def resize(image, width=None, height=None, inter=cv2.INTER_AREA):
 		dim = None
@@ -26,7 +25,7 @@ class Helpers:
 		elif len(cnts) == 3:
 			cnts = cnts[1]
 		else:
-			raise Exception('The length of the contour must be 2 or 3.')
+			raise Exception_Length('The length of the contour must be 2 or 3.')
 
 		return cnts
 
@@ -49,13 +48,13 @@ class Helpers:
 		rect = Helpers.orders(pts)
 		(tl, tr, br, bl) = rect
 
-		widthA = np.sqrt(((br[0] - bl[0]) ** 2) + ((br[1] - bl[1]) ** 2))
-		widthB = np.sqrt(((tr[0] - tl[0]) ** 2) + ((tr[1] - tl[1]) ** 2))
-		maxWidth = max(int(widthA), int(widthB))
+		width_a = np.sqrt(((br[0] - bl[0]) ** 2) + ((br[1] - bl[1]) ** 2))
+		width_b = np.sqrt(((tr[0] - tl[0]) ** 2) + ((tr[1] - tl[1]) ** 2))
+		max_width = max(int(widthA), int(widthB))
 
-		heightA = np.sqrt(((tr[0] - br[0]) ** 2) + ((tr[1] - br[1]) ** 2))
-		heightB = np.sqrt(((tl[0] - bl[0]) ** 2) + ((tl[1] - bl[1]) ** 2))
-		maxHeight = max(int(heightA), int(heightB))
+		height_a = np.sqrt(((tr[0] - br[0]) ** 2) + ((tr[1] - br[1]) ** 2))
+		height_b= np.sqrt(((tl[0] - bl[0]) ** 2) + ((tl[1] - bl[1]) ** 2))
+		max_height = max(int(heightA), int(heightB))
 
 		dst = np.array([
 			[0, 0],
