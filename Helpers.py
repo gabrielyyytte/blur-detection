@@ -20,7 +20,7 @@ class Helpers:
 		
 		return resized
 	
-	def checkContours(cnts)
+	def check_contours(cnts)
 		if len(cnts) == 2:
 			cnts = cnts[0]
 		elif len(cnts) == 3:
