@@ -18,8 +18,8 @@ class Helpers:
 		resized = cv2.resize(image, dim, interpolation=inter)
 		
 		return resized
-	
-	def check_contours(cnts)
+
+	def check_contours(cnts):
 		if len(cnts) == 2:
 			cnts = cnts[0]
 		elif len(cnts) == 3:
@@ -43,7 +43,7 @@ class Helpers:
 		
 		return rect
 	
-	def transformation(image)
+	def transformation(image):
 
 		rect = Helpers.orders(pts)
 		(tl, tr, br, bl) = rect
