@@ -33,7 +33,7 @@ def upload_image():
 			image = cv2.imdecode(npimg, cv2.IMREAD_UNCHANGED)
 			image = Helpers.resize(image, height = 500)
 
-			gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+			black = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 			fm = cv2.Laplacian(black, cv2.CV_64F).var()
 			result = "Not Blurry"
 
